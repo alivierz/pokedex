@@ -75,8 +75,8 @@ const HomePage = ({trainer}) =>{
           <main className='main'>
             {pokeType.length ? cutListPokemon : listPokemonUrl}
           </main>
-          {pokeType.length ? <div> <button onClick={PrevT}>Prev</button> <button onClick={NextT}>Next</button> </div> : 
-          <div> <button onClick={Prev}>Prev</button> <button onClick={Next}>Next</button> </div>}
+            {pokeType.length ? <div className='cont-b'> <button onClick={PrevT}>Prev</button> <button onClick={NextT}>Next</button> </div> : 
+            <div className='cont-b'> <button onClick={Prev}>Prev</button> <button onClick={Next}>Next</button> </div>}
         </div>
     )
 }
