@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter, Route, Routes, Navigate, NavLink} from 'react-router-dom';
+import HomePage from './pages/Home';//! componente HomePage
+import Login from './pages/Login'; //! componente login
+import PokemoInfo from './pages/pokemon'; //!componente del pokemon
+import NavBar from './components/nav/navBar';
+import { useState } from 'react';
 function App() {
+  //! estados
+  const [ name, setName ] = useState('')
+
+  //*Utilidad local storage
+  
+  //!constantes
+  localStorage.setItem('user', name)
+  
+  const itemU = localStorage.getItem('user')
+  
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<Login  handlerName={setName}/>}/>
+          <Route path='/pokedex' element={itemU ? <HomePage trainer={itemU} /> : <Navigate to='/'/>}/>
+          <Route path='/pokedex/pokemon/:id' element={itemU ? <PokemoInfo /> : <Navigate to='/'/>}/>
+        </Routes>
+    </BrowserRouter>
   );
 }
 

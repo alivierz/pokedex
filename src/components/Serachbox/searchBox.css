@@ -1,0 +1,72 @@
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.option > span{
+    padding: 0 .5rem;
+    color: white;
+    font-weight: bold;
+}
+.button-container{
+    background-color: white;
+    border-radius: 2rem;
+}
+.search-type{
+    margin: 0rem 2rem 0 0;
+    padding: 1rem;
+    transition: all .5s ease-in-out;
+    border-radius: 2rem;
+    border: none;
+    background-color: black;
+}
+.search-name{
+    margin: 0 0 0 2rem;
+    padding: 1rem;
+    transition: all .5s ease-in-out;
+    border: none;
+    border-radius: 2rem;
+    background-color: black;
+}
+.container-pokemon-search{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.select{
+    width: 50%;
+    border: none;
+    padding: .8rem 1.5rem .8rem .5rem;
+    color: white;
+    background-color: black;
+    border-radius: 2rem;
+}
+.options{
+    color: white;
+    background-color: black;
+    border: none;
+}
+.name-poke{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.name-poke-link{
+    color: white;
+    background-color: black;
+    padding: .8rem 1rem .8rem .8rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+.name-poke-input{
+    border: none;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-left: 1rem;
+    width: 50%;
+}

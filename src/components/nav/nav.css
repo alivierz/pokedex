@@ -1,0 +1,13 @@
+.fixed{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: .5rem .7rem;
+    z-index: 10000;
+    cursor: pointer;
+}
