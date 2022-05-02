@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom"
  import getOnePokemon from "../services/getOnePokemon"
 import { useState } from "react"
 import './pokemon.css'
+import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"
 
 const PokemoInfo = () =>{
     const poke = useParams()//*parametro de busqueda
@@ -38,7 +41,7 @@ const PokemoInfo = () =>{
     const ability = pokeAbili.map((value) => <p key={value.ability.name}>{value.ability.name}</p>)
     return(
         <div className={`poke-page ${pType}`}>
-            <div className="profile">
+            <div className="profile">            
             <img src={pokeImg} alt="loadin..." />
             <h2>{pokeName}</h2>    
                 <div className="miss">
@@ -58,6 +61,9 @@ const PokemoInfo = () =>{
             <ul className="list-profile">
                 {lvl}
             </ul>
+            <div className="encounter">
+                <Link to={`/pokedex/pokemon/${poke.id}/encounters`}> Encounters <FontAwesomeIcon icon={faMapMarkerAlt}/> </Link>
+            </div>
         </div>
     )
 }

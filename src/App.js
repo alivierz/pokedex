@@ -4,6 +4,7 @@ import HomePage from './pages/Home';//! componente HomePage
 import Login from './pages/Login'; //! componente login
 import PokemoInfo from './pages/pokemon'; //!componente del pokemon
 import NavBar from './components/nav/navBar';
+import Encounters from './pages/encounters';
 import { useState } from 'react';
 function App() {
   //! estados
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<Login  handlerName={setName}/>}/>
           <Route path='/pokedex' element={itemU ? <HomePage trainer={itemU} /> : <Navigate to='/'/>}/>
           <Route path='/pokedex/pokemon/:id' element={itemU ? <PokemoInfo /> : <Navigate to='/'/>}/>
+          <Route path='/pokedex/pokemon/:id/encounters'  element={itemU ? <Encounters /> : <Navigate to='/'/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
     </HashRouter>
