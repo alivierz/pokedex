@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes, Navigate, NavLink} from 'react-router-dom';
+import { Route, Routes, Navigate, HashRouter} from 'react-router-dom';
 import HomePage from './pages/Home';//! componente HomePage
 import Login from './pages/Login'; //! componente login
 import PokemoInfo from './pages/pokemon'; //!componente del pokemon
@@ -16,18 +16,16 @@ function App() {
   
   const itemU = localStorage.getItem('user')
   
-  
-
   return (
-    <BrowserRouter >
+    <HashRouter >
         <NavBar/>
         <Routes>
           <Route path='/' element={<Login  handlerName={setName}/>}/>
           <Route path='/pokedex' element={itemU ? <HomePage trainer={itemU} /> : <Navigate to='/'/>}/>
           <Route path='/pokedex/pokemon/:id' element={itemU ? <PokemoInfo /> : <Navigate to='/'/>}/>
-          <Route path='*' element={<Login  handlerName={setName}/>}/>
+          <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
