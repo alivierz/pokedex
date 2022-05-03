@@ -11,27 +11,24 @@
     font-size: 3rem;
     padding: 0 0 2rem 0;
     text-align: center;
+    color: white;
 }
 .list-span{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .list-span > span{
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: black;
-    margin: 1rem 0;
+    margin:1rem;
     border: 1px solid black;
     border-radius: 2rem;
     padding: 2rem;
     background-color: white;
     text-align: center;
 }
-@media (min-width: 900px){
+@media (max-width: 900px){
     .list-span{
-        flex-direction: row;
-    }
-    .list-span > span{
-        margin: 1rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
