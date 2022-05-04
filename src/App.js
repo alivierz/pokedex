@@ -25,7 +25,7 @@ function App() {
           <Route path='/pokedex' element={itemU ? <HomePage trainer={itemU} /> : <Navigate to='/'/>}/>
           <Route path='/pokedex/pokemon/:id' element={itemU ? <PokemoInfo /> : <Navigate to='/'/>}/>
           <Route path='/pokedex/pokemon/:id/encounters'  element={itemU ? <Encounters /> : <Navigate to='/'/>}/>
-          <Route path='*' element={<Navigate to='/'/>}/>
+          <Route path='*' element={<Login  handlerName={setName}/>}/>
         </Routes>
     </HashRouter>
   );
