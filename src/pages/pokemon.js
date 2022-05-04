@@ -34,11 +34,11 @@ const PokemoInfo = () =>{
             setMoves(res.data.moves)
         })
     },[ poke ])
-
     //! listado 
     const types = pokeType.map((value) => <h3 key={value.slot} className={value.type.name}>{value.type.name}</h3>)
     const lvl = stats.map((value) => <li key={value.stat.name}>{value.stat.name}: <span>{value.base_stat}</span> </li>)
     const ability = pokeAbili.map((value) => <p key={value.ability.name}>{value.ability.name}</p>)
+    const movesList = moves.map((value) => <p key={value.move.name}>{value.move.name}</p>)
     return(
         <div className={`poke-page ${pType}`}>
             <div className="profile">            
@@ -64,6 +64,12 @@ const PokemoInfo = () =>{
             <div className="encounter">
                 <Link to={`/pokedex/pokemon/${poke.id}/encounters`}> Encounters <FontAwesomeIcon icon={faMapMarkerAlt}/> </Link>
             </div>
+            <div className="scroll">
+                <div className="list-moves">
+                    {movesList}
+                </div>
+            </div>
+            
         </div>
     )
 }
